@@ -4,14 +4,11 @@
 
 ** preliminaries **;
 
-ods html body="survival-lecture-2-sas.html";
-
-ods graphics on
-  / imagename="survival-lecture-2-sas-"
-    reset=index;
-
+ods pdf
+ file="/folders/myfolders/survival-lecture2/sas/class2.pdf";
+ 
 libname survival
-  "c:/Users/simons/My Documents/survival-models/bin";
+  "/folders/myfolders/data";
 
 ** overall survival **;
 
@@ -70,4 +67,4 @@ proc phreg
   model time_yrs*fstat(0)=age;
 run;
 
-
+ods pdf close;
