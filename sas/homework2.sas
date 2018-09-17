@@ -4,11 +4,11 @@
 
 ** preliminaries **;
 
-ods pdf
-  file="/folders/myfolders/survival-lecture2/sas/homework2.pdf";
-
 libname survival
   "/folders/myfolders/data";
+
+ods pdf
+  file="/folders/myfolders/survival-lecture2/sas/homework2.pdf";
 
 proc print
     data=survival.whas500(obs=10);
@@ -72,6 +72,7 @@ run;
 proc phreg
     data=survival.whas500;
   model time_yrs*fstat(0)=age;
+  title "Comparison of survival for continuous age covariate";
 run;
 
 ods pdf close;

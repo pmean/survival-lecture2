@@ -4,12 +4,11 @@
 
 ** preliminaries **;
 
-ods pdf
- file="/folders/myfolders/survival-lecture2/sas/class2.pdf";
- 
 libname survival
   "/folders/myfolders/data";
 
+ods pdf
+ file="/folders/myfolders/survival-lecture2/sas/class2.pdf";
 
 ** print the first few rows 
    to make sure you have the
@@ -19,8 +18,8 @@ proc print
     data=survival.whas100(obs=10);
 run;
 
-* You've laready run an overall survival curve, but
-  it doesnt hurt to run this again as a cross check   ;
+* You've already run an overall survival curve, but
+  it does not hurt to run this again as a cross check   ;
 
 proc lifetest
     notable
